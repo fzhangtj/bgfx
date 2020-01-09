@@ -73,6 +73,16 @@ newaction {
 			local dgen = require "bindings-d"
 			dgen.write(dgen.gen_types(), "../bindings/d/types.d")
 			dgen.write(dgen.gen_funcs(), "../bindings/d/funcs.d")
+
+			local cs_bridge_gen = require "bindings-cs-bridge"
+			csgen.write(cs_bridge_gen.gen(), "../bindings/cs/bgfx.bridge.cs")
+			local fbsgen = require "bindings-fbs"
+			csgen.write(fbsgen.gen(), "../bindings/cs/bgfx.fbs")
+			-- genclient
+			csgen.write(fbsgen.genclient(), "../include/bgfx/c99/bgfxclient.gen.h")
+			csgen.write(fbsgen.gennative(), "../../TinyWebView/TinyWebView/bgfxnative.gen.h")
+			-- gennative
+			--csgen.write(fbsgen.gencs(), "../bindings/cs/bgfx.bridge.cs")
 		end
 
 		os.exit()
