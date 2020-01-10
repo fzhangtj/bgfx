@@ -125,6 +125,7 @@ local function structdef(_, typename)
 			if type(attribs) == "string" then
 				add_comment(item, attribs)
 			else
+				-- error("Error Message") 
 				copy_attribs(item, attribs)
 			end
 			return obj

@@ -81,6 +81,10 @@ newaction {
 			-- genclient
 			csgen.write(fbsgen.genclient(), "../include/bgfx/c99/bgfxclient.gen.h")
 			csgen.write(fbsgen.gennative(), "../../TinyWebView/TinyWebView/bgfxnative.gen.h")
+
+			local wasmmodule = require "wasm-module"
+			csgen.write(wasmmodule.gen_c(), "../../wasm3_tiny/source/m3_api_bgfx_gen.c")
+			--csgen.write(wasmmodule.gen_c(), "../bindings/wasmmodule.c")
 			-- gennative
 			--csgen.write(fbsgen.gencs(), "../bindings/cs/bgfx.bridge.cs")
 		end
