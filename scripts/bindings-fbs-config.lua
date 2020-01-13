@@ -28,6 +28,7 @@ config.funcs_gen = {"copy",
 "set_vertex_buffer",
 "set_uniform",
 "set_texture",
+"set_platform_data",
 "submit",
 "encoder_set_transform",
 "set_view_transform",
@@ -41,7 +42,11 @@ config.funcs_gen = {"copy",
 "reset",
 "dbg_text_clear",
 "destroy_texture",
-"request_screen_shot"
+"request_screen_shot",
+"alloc_transient_buffers",
+"init",
+"get_renderer_type",
+"get_caps"
 }
 
 for _, v in ipairs(config.funcs_gen) do
