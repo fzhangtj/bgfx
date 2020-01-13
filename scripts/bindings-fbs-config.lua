@@ -6,6 +6,7 @@ config.funcs_gen = {"copy",
 "vertex_layout_add",
 "vertex_layout_end",
 "create_vertex_layout",
+"get_renderer_name",
 "create_shader",
 "set_shader_name",
 "create_program",
@@ -45,8 +46,7 @@ config.funcs_gen = {"copy",
 "request_screen_shot",
 "alloc_transient_buffers",
 "init",
-"get_renderer_type",
-"get_caps"
+"get_renderer_type"
 }
 
 for _, v in ipairs(config.funcs_gen) do

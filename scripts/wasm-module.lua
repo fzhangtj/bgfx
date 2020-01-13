@@ -25,7 +25,7 @@ M3Result SuppressLookupFailure(M3Result i_result)
         return i_result;
 }
 
-M3Result  m3_LinkBGFX  (IM3Module module, void* handle)
+M3Result  m3_LinkBGFX_Gen  (IM3Module module, void* handle)
 {
     M3Result result = m3Err_none;
     whandle = handle;
