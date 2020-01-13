@@ -424,7 +424,9 @@ function converter.funcs(func)
         print(arg.ctype)
         -- if arg.ctype == "int32_t" or arg.ctype == "bool" 
         if hasSuffix(arg.ctype, "bgfx_init_t *") or hasSuffix(arg.ctype, "bgfx_init_t*")  then
-            yield("\tm3BgfxApiGetInitArg(_bgfx_" .. arg.name .. ")")
+			yield("\tm3BgfxApiGetInitArg(_bgfx_" .. arg.name .. ")")
+		elseif hasSuffix(arg.ctype, "platform_data_t *") or hasSuffix(arg.ctype, "platform_data_t*")  then
+            yield("\tm3BgfxApiGetPlatformDataArg(_bgfx_" .. arg.name .. ")")	
         elseif hasSuffix(arg.ctype, "*") then
             yield("\tm3ApiGetArgMem   (" .. arg.ctype .. "       , _bgfx_" .. arg.name .. ")")
         else
